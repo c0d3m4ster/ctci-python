@@ -4,7 +4,6 @@ import unittest
 # Check Permutation: 
 # Given two strings, write a method to decide if one is a permutation of the other.
 
-
 def are_permutation(input_string_1, input_string_2):
     # early exit if lengths are different
     if len(input_string_1) != len(input_string_2):
