@@ -44,7 +44,7 @@ class TestUrlify(unittest.TestCase):
         self.assertTrue(
             urlify(
                 "Final letter is a space  ", 24), 
-                "%20Final%20letter%20is%20a%20space%20")
+                "Final%20letter%20is%20a%20space%20")
 
 if __name__ == '__main__':
     unittest.main()
