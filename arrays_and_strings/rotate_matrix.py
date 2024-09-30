@@ -24,10 +24,25 @@ def rotate_matrix(matrix):
 
 
 class TestRotateMatrix(unittest.TestCase):
-    def test_rotate_matrix(self):
+    def test_matrix_3_by_3(self):
         M_in = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
         M_out = [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
+        self.assertEqual(rotate_matrix(M_in), M_out)
+    
+    def test_matrix_4_by_4(self):
+        M_in = [[75, 57, 19, 65],
+                [26, 87, 82, 18],
+                [78, 28, 76, 46],
+                [99, 50, 37, 28]]
+        M_out = [[99, 78, 26, 75], 
+                 [50, 28, 87, 57], 
+                 [37, 76, 82, 19], 
+                 [28, 46, 18, 65]]
         self.assertEqual(rotate_matrix(M_in), M_out)
 
 if __name__ == "__main__":
     unittest.main()
+
+
+
+
