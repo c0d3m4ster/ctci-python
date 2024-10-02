@@ -19,10 +19,10 @@ def is_rotation(s1, s2):
 
 
 class TestIsRotation(unittest.TestCase):
-    def test_empty_matrix(self):
+    def test_a_rotation_example(self):
         s1 = 'waterbottle'
         s2 = 'erbottlewat'
-        self.assertEqual(is_rotation(s1, s2), True)
+        self.assertTrue(is_rotation(s1, s2), True)
 
 
 if __name__ == "__main__":
