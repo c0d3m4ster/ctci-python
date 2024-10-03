@@ -2,9 +2,12 @@ import unittest
 
 
 # String Rotation:
-# Assume you have a method isSubstring which checks if one word is a substring
-# of another. Given two strings, sl and s2, write code to check if s2 is a rotation of sl using only one
-# call to isSubstring (e.g.,"waterbottle" is a rotation of "erbottlewat").
+# Assume you have a method isSubstring which checks if 
+# one word is a substring of another. 
+# Given two strings, sl and s2, write code to check if 
+# s2 is a rotation of sl using only one call to isSubstring 
+# (e.g.,"waterbottle" is a rotation of "erbottlewat").
+
 
 def is_substring(s1, s2):
     return s2 in s1
@@ -19,11 +22,20 @@ def is_rotation(s1, s2):
 
 
 class TestIsRotation(unittest.TestCase):
-    def test_a_rotation_example(self):
+    def test_rotation_example(self):
         s1 = 'waterbottle'
         s2 = 'erbottlewat'
         self.assertTrue(is_rotation(s1, s2), True)
 
+    def test_random_string(self):
+        s1 = 'HelloWorld'
+        s2 = 'elloWorldH'
+        self.assertTrue(is_rotation(s1, s2), True)
+
+    def test_not_a_rotation(self):
+        s1 = 'happyDay'
+        s2 = 'dayHappy'
+        self.assertFalse(is_rotation(s1, s2), False)
 
 if __name__ == "__main__":
     unittest.main()
