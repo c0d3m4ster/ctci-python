@@ -1,3 +1,6 @@
+import unittest
+
+
 # Sum Lists: 
 # You have two numbers represented by a linked list, 
 # where each node contains a single digit. 
@@ -26,13 +29,13 @@ class LinkedList:
             for item in initial_data:
                 self.append(item)
 
-    def __eq__(self, other):        
-        if len(self) != len(other):
+    def __eq__(self, other):            
+        if len(self) != len(other):            
             return False                
         current1 = self.head
         current2 = other.head        
         while current1 and current2:
-            if current1.data != current2.data:
+            if current1.data != current2.data: 
                 return False
             current1 = current1.next
             current2 = current2.next            
@@ -72,9 +75,10 @@ class LinkedList:
         other_num = other.to_number(reverse)   
         num = self_num + other_num
         if reverse:
-            return LinkedList(list(str(num)[::-1]))
+            output = [int(x) for x in list(str(num)[::-1])]            
         else:
-            return LinkedList(list(str(num)))
+            output = [int(x) for x in list(str(num))]
+        return LinkedList(output)
     
     def __str__(self):
         values = []
@@ -83,17 +87,19 @@ class LinkedList:
             values.append(str(node.data))
             node = node.next
         return " -> ".join(values)
-    
-
-linked_list_1 = LinkedList([7, 1, 6])   # 617
-linked_list_2 = LinkedList([5, 9, 2])   # 295
-
-print(linked_list_1.add(linked_list_2)) # 2 -> 1 -> 9
 
 
+class TestAddLinkedList(unittest.TestCase):
 
-# FOLLOW UP
-linked_list_1 = LinkedList([6, 1, 7])   # 617
-linked_list_2 = LinkedList([2, 9, 5])   # 295
+    def test_reverse_add(self):
+        linked_list_1 = LinkedList([7, 1, 6])
+        linked_list_2 = LinkedList([5, 9, 2])
+        self.assertTrue(linked_list_1.add(linked_list_2) == LinkedList([2, 1, 9]))
 
-print(linked_list_1.add(linked_list_2, reverse=False)) # 9 -> 1 -> 2
+    def test_follow_up(self):
+        linked_list_1 = LinkedList([6, 1, 7])
+        linked_list_2 = LinkedList([2, 9, 5])     
+        self.assertTrue(linked_list_1.add(linked_list_2, reverse=False) == LinkedList([9, 1, 2]))
+
+if __name__ == '__main__':
+    unittest.main()
