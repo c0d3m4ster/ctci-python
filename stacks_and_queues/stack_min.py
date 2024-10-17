@@ -11,13 +11,13 @@ class MinStack:
 
     def push(self, value):
         self.stack.append(value)        
-        if not self.min_stack or value <= self.min_stack[0]:
+        if not self.min_stack or value <= self.min_stack[-1]:
             self.min_stack.append(value)
 
     def pop(self):
         if self.stack:
             value = self.stack.pop()            
-            if value == self.min_stack[0]:
+            if value == self.min_stack[-1]:
                 self.min_stack.pop()
             return value
         raise IndexError("pop from empty stack")
@@ -25,4 +25,4 @@ class MinStack:
     def min(self):
         if not self.min_stack:
             raise IndexError("min from empty stack")
-        return self.min_stack[0]
+        return self.min_stack[-1]
