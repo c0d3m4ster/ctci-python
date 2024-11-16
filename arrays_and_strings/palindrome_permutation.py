@@ -10,6 +10,8 @@ import unittest
 # Input: Tact Coa
 # Output: True (permutations: "taco cat", "atco eta", etc.)
 
+# Total Time Complexity: O(n)
+# The worst case space Complexity: O(n)
 
 def is_palindrom_permutation (input_string):
     input_string = input_string.lower().replace(' ', '')

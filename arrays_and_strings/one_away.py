@@ -13,6 +13,9 @@ import unittest
 # pale, bale  -> true
 # pale, bake  -> false
 
+# time complexity is O(n) 
+# space complexity is O(1)
+
 def one_insert(s1, s2):
     # we assume s1 is one character longer
     i, j = 0, 0
