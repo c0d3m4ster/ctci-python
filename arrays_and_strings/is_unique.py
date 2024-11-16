@@ -8,6 +8,11 @@ import unittest
 # We check for uniqueness without using additional data structures like 
 # lists, sets and dictionaries
 
+# Time Complexity: O(n)
+# Space Complexity:
+#   O(n) if case insensitive,
+#   O(1) if case sensitive.
+
 # defining a function to check if an input string has unique characters
 def is_unique(input_string, case_insensitive=True):
 
